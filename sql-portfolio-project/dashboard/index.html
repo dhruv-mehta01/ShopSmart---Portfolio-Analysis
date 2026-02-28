@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSmart Analytics | SQL Portfolio Dashboard</title>
+    <meta name="description" content="E-Commerce Sales Analysis Dashboard — SQL Data Analyst Portfolio Project">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">S</div>
+                <div>
+                    <h1>ShopSmart Analytics</h1>
+                    <p class="subtitle">E-Commerce Sales Analysis Dashboard</p>
+                </div>
+            </div>
+            <div class="header-badge">SQL Portfolio Project</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- KPI Cards -->
+        <section class="kpi-section" id="kpi-section">
+            <div class="kpi-card" id="kpi-revenue">
+                <div class="kpi-icon revenue-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Total Revenue</span>
+                    <span class="kpi-value" id="kpi-total-revenue">--</span>
+                </div>
+            </div>
+            <div class="kpi-card" id="kpi-orders">
+                <div class="kpi-icon orders-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Total Orders</span>
+                    <span class="kpi-value" id="kpi-total-orders">--</span>
+                </div>
+            </div>
+            <div class="kpi-card" id="kpi-customers">
+                <div class="kpi-icon customers-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Customers</span>
+                    <span class="kpi-value" id="kpi-total-customers">--</span>
+                </div>
+            </div>
+            <div class="kpi-card" id="kpi-aov">
+                <div class="kpi-icon aov-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Avg Order Value</span>
+                    <span class="kpi-value" id="kpi-avg-order">--</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Row 1: Revenue Trend + Category Breakdown -->
+        <section class="chart-row">
+            <div class="chart-card chart-wide">
+                <h2 class="chart-title">Monthly Revenue Trend</h2>
+                <div class="chart-container"><canvas id="revenueChart"></canvas></div>
+            </div>
+            <div class="chart-card chart-narrow">
+                <h2 class="chart-title">Revenue by Category</h2>
+                <div class="chart-container"><canvas id="categoryChart"></canvas></div>
+            </div>
+        </section>
+
+        <!-- Charts Row 2: Top Customers + Regional Revenue -->
+        <section class="chart-row">
+            <div class="chart-card chart-half">
+                <h2 class="chart-title">Top 10 Customers by Spend</h2>
+                <div class="chart-container"><canvas id="customersChart"></canvas></div>
+            </div>
+            <div class="chart-card chart-half">
+                <h2 class="chart-title">Revenue by Region</h2>
+                <div class="chart-container"><canvas id="regionChart"></canvas></div>
+            </div>
+        </section>
+
+        <!-- Charts Row 3: Order Status + Payment Methods + Customer Segments -->
+        <section class="chart-row triple">
+            <div class="chart-card chart-third">
+                <h2 class="chart-title">Order Status</h2>
+                <div class="chart-container"><canvas id="statusChart"></canvas></div>
+            </div>
+            <div class="chart-card chart-third">
+                <h2 class="chart-title">Payment Methods</h2>
+                <div class="chart-container"><canvas id="paymentChart"></canvas></div>
+            </div>
+            <div class="chart-card chart-third">
+                <h2 class="chart-title">Customer Segments</h2>
+                <div class="chart-container"><canvas id="segmentChart"></canvas></div>
+            </div>
+        </section>
+
+        <!-- Charts Row 4: Top Products Table -->
+        <section class="chart-row">
+            <div class="chart-card chart-full">
+                <h2 class="chart-title">Top 10 Products by Revenue</h2>
+                <div class="chart-container"><canvas id="productsChart"></canvas></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Built by Dhruv | SQL Data Analyst Portfolio Project | 2026</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
