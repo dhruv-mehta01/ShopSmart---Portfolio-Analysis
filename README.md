@@ -227,11 +227,9 @@ Potential improvements for this project:
 ---
 
 👨‍💻 Author
-
-**Dhruv Mehta**
-B.Tech Computer Science Engineering
-
-Data Analytics | SQL | Python | Visualization
+DHRUV MEHTA
+Computer Science Student, 
+ICT-Ganpat university,Mehsana
 
 ---
 
